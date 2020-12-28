@@ -16,6 +16,10 @@ create table if not exists users(
     constraint pk_users primary key(id),
 )engine=InnoDb;
 
+insert into users values(null, 'user', 'Gabriel', 'Montes', 'gabrielweb', 'gabriel@gabriel.com', 'pass', null, curtime(), curtime(), null);
+insert into users values(null, 'user', 'Juan', 'Lopez', 'juanlopez', 'juan@juan.com', 'pass', null, curtime(), curtime(), null);
+insert into users values(null, 'user', 'Manolo', 'Garcia', 'manologarcia', 'manolo@garcia.com', 'pass', null, curtime(), curtime(), null);
+
 create table if not exists images(
     id                  int(255) auto_increment not null,
     user_id             int(255),
@@ -26,6 +30,11 @@ create table if not exists images(
     constraint pk_images primary key(id),
     constraint fk_images_users foreign key(user_id) references users(id)
 )engine=InnoDb;
+
+insert into images values(null, 1, 'test.jpg', 'descripcion de prueba 1', curtime(), curtime());
+insert into images values(null, 1, 'playa.jpg', 'descripcion de prueba 2', curtime(), curtime());
+insert into images values(null, 1, 'arena.jpg', 'descripcion de prueba 3', curtime(), curtime());
+insert into images values(null, 3, 'familia.jpg', 'descripcion de prueba 4', curtime(), curtime());
 
 create table if not exists comments(
     id                  int(255) auto_increment not null,
@@ -39,6 +48,10 @@ create table if not exists comments(
     constraint fk_comments_images foreign key(image_id) references images(id)
 )engine=InnoDb;
 
+insert into comments values(null, 1, 4, 'Buena foto de familia', curtime(), curtime());
+insert into comments values(null, 2, 1, 'Buena foto de PLAYA!!', curtime(), curtime());
+insert into comments values(null, 2, 4, 'que bueno!!', curtime(), curtime());
+
 create table if not exists likes(
     id                  int(255) auto_increment not null,
     user_id             int(255),
@@ -49,3 +62,9 @@ create table if not exists likes(
     constraint fk_likes_users foreign key(user_id) references users(id),
     constraint fk_likes_images foreign key(image_id) references images(id)
 )engine=InnoDb;
+
+insert into likes values(null, 1, 4, curtime(), curtime());
+insert into likes values(null, 2, 4, curtime(), curtime());
+insert into likes values(null, 3, 1, curtime(), curtime());
+insert into likes values(null, 3, 2, curtime(), curtime());
+insert into likes values(null, 2, 1, curtime(), curtime());

@@ -1,0 +1,19 @@
+.center-items-nav {
+    display: flex !important;
+    align-items: center;
+}
+
+.avatar {
+    width: 200px;
+}
+
+.navbar .container-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 900px;
+    overflow: hidden;
+}
+
+.navbar .container-avatar img {
+    width: 100%;
+}
