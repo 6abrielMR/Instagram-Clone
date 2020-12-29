@@ -54,7 +54,7 @@
                             @endif
                         @else
                             <li class="center-items-nav nav-item"><a class="nav-link" href="{{ route('home') }}">Inicio</a></li>
-                            <li class="center-items-nav nav-item"><a class="nav-link" href="">Subir imagen</a></li>
+                            <li class="center-items-nav nav-item"><a class="nav-link" href="{{ route('image.create') }}">Subir imagen</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="center-items-nav nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @include('includes.avatar')

@@ -7,6 +7,17 @@
     width: 200px;
 }
 
+.container-pub-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 900px;
+    overflow: hidden;
+}
+
+.container-pub-avatar img {
+    width: 100%;
+}
+
 .navbar .container-avatar {
     width: 35px;
     height: 35px;
@@ -16,4 +27,112 @@
 
 .navbar .container-avatar img {
     width: 100%;
+}
+
+/* Images */
+.header-images {
+    display: flex;
+    align-items: center;
+}
+
+.header-images p {
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+    margin: 0;
+}
+
+.image-container {
+    max-height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.btns-comments {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btns-comments h2 {
+    margin: 0;
+}
+
+.likes img{
+    width: 25px;
+    margin-right: 10px;
+}
+
+.card-footer a {
+    text-decoration: none;
+    color: gray;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.card-footer a:hover {
+    text-decoration: none;
+    color: gray;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.timestamp {
+    font-size: 12px;
+    font-weight: 300;
+    color: gray;
+}
+
+/* detail */
+
+.label-comment {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.content-comment {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+}
+
+.comment-header p {
+    color: gray;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.comment-content p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.comment-footer {
+    display: flex;
+    align-items: center;
+}
+
+.btn-delete-comment {
+    display: flex;
+}
+
+.btn-delete-comment a {
+    font-size: 12px;
+}
+
+.btn-delete-comment a:hover {
+    font-size: 12px;
 }
