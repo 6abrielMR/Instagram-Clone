@@ -29,10 +29,21 @@
     width: 100%;
 }
 
+/* Genereal */
+.number-likes {
+    color: gray;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
 /* Images */
 .header-images {
     display: flex;
     align-items: center;
+}
+
+.header-images:hover {
+    text-decoration: none;
 }
 
 .header-images p {
@@ -50,7 +61,7 @@
     align-items: center;
 }
 
-.card-body {
+.content-body {
     padding: 0 !important;
 }
 
@@ -66,7 +77,7 @@
 
 .likes img{
     width: 25px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .card-footer a {
@@ -135,4 +146,32 @@
 
 .btn-delete-comment a:hover {
     font-size: 12px;
+}
+
+/* Perfil de usuario */
+
+.data-user {
+    margin-bottom: 20px;
+}
+
+.content-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-nickname {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.info-name {
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.info-createdat {
+    color: gray;
+    font-size: 14px;
+    font-weight: 400;
 }

@@ -19,7 +19,7 @@
                     <p>{{ $image->user->nick }}</p>
                 </div>
                 @if ($image->image_path)
-                    <div class="card-body">
+                    <div class="card-body content-body">
                         <div class="image-container">
                             <img src="{{ route('image.file', ['filename'=>$image->image_path]) }}" alt="Imagen publicada">
                         </div>
@@ -31,7 +31,19 @@
                         <div class="description">{{ $image->description }}</div>
                         <div class="btns-comments">
                             <div class="likes">
-                                <img src="{{ asset('img/heart-black.png') }}" alt="like">
+                                <?php $user_like = false; ?>
+                                @foreach ($image->likes as $like)
+                                    @if ($like->user_id == Auth::user()->id)
+                                        <?php $user_like = true; ?>
+                                        @break
+                                    @endif
+                                @endforeach
+                                @if ($user_like)
+                                    <img src="{{ asset('img/heart-red.png') }}" data-id="{{ $image->id }}" class="btn-dislike" alt="like">
+                                @else
+                                    <img src="{{ asset('img/heart-black.png') }}" data-id="{{ $image->id }}" class="btn-like" alt="like">
+                                @endif
+                                <span class="number-likes">{{ count($image->likes) }}</span>
                             </div>
                             <h2 >Comentarios({{ count($image->comments) }})</h2>
                             <br><br>

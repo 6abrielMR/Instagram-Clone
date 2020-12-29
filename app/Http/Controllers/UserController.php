@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
@@ -53,5 +54,13 @@ class UserController extends Controller
 
         $user->update();
         return redirect()->route('config')->with(['message'=>'Usuario actualizado correctamente']);
+    }
+
+    public function profile($id) {
+        $user = User::find($id);
+
+        return view('user.profile', [
+            'user' => $user
+        ]);
     }
 }

@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -54,6 +55,7 @@
                             @endif
                         @else
                             <li class="center-items-nav nav-item"><a class="nav-link" href="{{ route('home') }}">Inicio</a></li>
+                            <li class="center-items-nav nav-item"><a class="nav-link" href="{{ route('likes') }}">Favoritos</a></li>
                             <li class="center-items-nav nav-item"><a class="nav-link" href="{{ route('image.create') }}">Subir imagen</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="center-items-nav nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -64,7 +66,7 @@
                                     <h6 class="dropdown-header">@ {{ Auth::user()->nick }}</h6>
                                     <div class="dropdown-divider"></div>
 
-                                    <a class="dropdown-item" href="">
+                                    <a class="dropdown-item" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
                                         Mi perfil
                                     </a>
 
